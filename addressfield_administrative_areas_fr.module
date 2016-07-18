@@ -1,0 +1,40 @@
+<?php
+
+/**
+ * @file
+ * Module's main file.
+ */
+
+/**
+ * Implements hook_addressfield_address_formats_alter().
+ */
+function addressfield_administrative_areas_fr_addressfield_address_formats_alter(&$address_formats) {
+  $address_formats['FR']= array(
+    'used_fields' => array('locality', 'administrative_area', 'postal_code'),
+    'required_fields' => array('locality', 'administrative_area', 'postal_code'),
+    'render_administrative_area_value' => TRUE,
+    'administrative_area_label' => t('Region'),
+  );
+}
+
+/**
+ * Implements hook_addressfield_administrative_areas_alter().
+ */
+function addressfield_administrative_areas_fr_addressfield_administrative_areas_alter(&$administrative_areas) {
+
+  $administrative_areas['FR'] = array(
+    'GE' => 'Grand Est',
+    'AR' => 'Auvergne-Rhône-Alpes',
+    'CV' => 'Centre-Val de Loire',
+    'HF' => 'Hauts-de-France',
+    'NA' => 'Nouvelle-Aquitaine',
+    'BF' => 'Bourgogne-Franche-Comté',
+    'BB' => 'Brittany (Bretagne)',
+    'CC' => 'Corsica (Corse)',
+    'IF' => 'Île-de-France',
+    'OC' => 'Occitania',
+    'NM' => 'Normandy (Normandie)',
+    'PL' => 'Pays-de-la-Loire',
+    'PA' => "Provence-Alpes-Côte d'Azur",
+  );
+}
