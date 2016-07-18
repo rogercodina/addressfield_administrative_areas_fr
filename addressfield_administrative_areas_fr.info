@@ -3,3 +3,5 @@ description = Adds administrative areas to France
 version = "7.x-1.0"
 core = "7.x"
 package = Fields
+
+dependencies[] = addressfield
